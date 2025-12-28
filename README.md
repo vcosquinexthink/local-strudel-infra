@@ -45,7 +45,7 @@ docker-compose --version
 
 1. **Clone and start:**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/vcosquinexthink/local-strudel-infra
    cd local-strudel-infra
    make build && make up
    ```
