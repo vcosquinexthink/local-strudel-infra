@@ -1,0 +1,18 @@
+services:
+  strudel:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: strudel-repl
+    ports:
+      - "3000:4321"
+    environment:
+      - NODE_ENV=development
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:4321"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
